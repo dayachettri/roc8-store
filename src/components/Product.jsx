@@ -1,6 +1,6 @@
 function Product({ info: { title, image, price } }) {
   return (
-    <div className="flex flex-col gap-3 max-w-[300px] p-5  shadow-md">
+    <div className="flex flex-col gap-3 mb-4 max-w-[300px] p-5 shadow-[0px_0px_10px_rgba(0,0,0,0.1)]">
       <img src={image} alt={title} className="w-full h-[200px] object-fit" />
       <h2 className="font-medium">{title.slice(0, 20)}...</h2>
       <span className="font-medium text-xs">${price}</span>

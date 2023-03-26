@@ -1,15 +1,19 @@
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { AiOutlineShoppingCart, AiFillRocket } from 'react-icons/ai';
 import { Link, useLocation } from 'react-router-dom';
-import useProducts from '../hooks/useProducts';
+import useProducts from '../hooks/useProductsContext';
+import useCartContext from '../hooks/useCartContext';
 
 function Navbar() {
   const { handleFilterChange } = useProducts();
+  const { cartQuantity } = useCartContext();
   const location = useLocation();
 
   return (
     <nav className="py-5 flex justify-between items-center mb-10">
       <Link to="..">
-        <div className="font-bold text-2xl text-gray-500">Roc8 Store🚀</div>
+        <div className="font-bold text-2xl flex items-center">
+          Roc8 Store <AiFillRocket className="font-4xl" />
+        </div>
       </Link>
       {location.pathname === '/' && (
         <div className="w-96">
@@ -22,9 +26,14 @@ function Navbar() {
         </div>
       )}
       <div>
-        <button className="text-3xl">
-          <AiOutlineShoppingCart />
-        </button>
+        <Link to="/cart">
+          <button className="text-4xl relative">
+            <AiOutlineShoppingCart />
+            <span className="absolute text-sm font-bold top-0 -right-4 text-teal-600">
+              {cartQuantity}
+            </span>
+          </button>
+        </Link>
       </div>
     </nav>
   );

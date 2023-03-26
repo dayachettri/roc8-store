@@ -4,9 +4,11 @@ import Navbar from '../components/Navbar';
 
 function Layout() {
   return (
-    <main className="max-w-5xl md:mx-auto px-2 flex flex-col ">
+    <main className="flex flex-col font-poppins max-w-5xl md:mx-auto px-2">
       <Navbar />
-      <Outlet />
+      <div className="grow">
+        <Outlet />
+      </div>
       <Footer />
     </main>
   );
