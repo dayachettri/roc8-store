@@ -3,6 +3,7 @@ import useCartContext from '../hooks/useCartContext';
 import { AiFillMinusCircle } from 'react-icons/ai';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Cart() {
   const [displayItems, setDisplayItems] = useState([]);
@@ -78,12 +79,19 @@ function Cart() {
 
   return (
     <div>
+      <Link to=".." className="mb-5 underline">
+        Go back to all products
+      </Link>
       {renderedItems.length !== 0 && (
         <h1 className="text-lg font-bold text-teal-600 mb-3">
           Your total: ${totalValue}
         </h1>
       )}
-      {renderedItems.length ? renderedItems : <h1>No items in your cart ☹️</h1>}
+      {renderedItems.length ? (
+        renderedItems
+      ) : (
+        <h1 className="my-5">No items in your cart ☹️</h1>
+      )}
     </div>
   );
 }

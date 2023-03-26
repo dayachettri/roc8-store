@@ -16,12 +16,12 @@ function Navbar() {
         </div>
       </Link>
       {location.pathname === '/' && (
-        <div className="w-96">
+        <div className="flex w-[80%]">
           <input
             onChange={e => handleFilterChange(e)}
             type="text"
             placeholder="Search"
-            className="w-96 border-b-2 border-slate-300 outline-none"
+            className="w-[80%] mx-auto border-b-2 border-slate-300 outline-none"
           />
         </div>
       )}

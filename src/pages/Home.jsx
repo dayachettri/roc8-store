@@ -23,7 +23,7 @@ function Products() {
       {renderedProducts.length ? (
         renderedProducts
       ) : (
-        <h1 className="font-medium">No Products Found ☹️</h1>
+        <h1 className="font-medium text-center">No Products Found ☹️</h1>
       )}
     </div>
   );
